@@ -215,7 +215,12 @@ function removeReservation(event) {
           set(reservationToRemoveRef, null)
             .then(() => {
               console.log("Reservation removed:", reservationKey);
-              // Optionally, you can add additional logic here if needed
+              // Display success message using SweetAlert2
+    Swal.fire({
+      icon: "success",
+      title: "Success",
+      text: "Reservation successfully removed!",
+    });
             })
             .catch((error) => {
               console.error("Error removing reservation:", error);
