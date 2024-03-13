@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Laundry Reservation System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="washingmachine_Style.css" />
+  <script type="module" src="./server.js" defer></script>
+  <script src="washingmachine.Js"></script>
+  
+  
+  <!-- Google Translate API -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'de',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        gaTrack: 'event' // Disable feedback popup
+      }, 'google_translate_element');
+    }
+  </script>
+
+</head>
+
+
+
+<body >
+ 
+ <!-- Google Translate widget -->
+ <div id="google_translate_element"></div>
+  
+
+<div class ="instructions">
+
+
+
+  <p>
+    Welcome to our Dorm reservation system! To reserve a laundry machine, follow these simple steps:
+  </p>
+
+  
+    <li><strong>Select Machine:</strong> Choose the type of machine you want to reserve from the dropdown list.</li>
+    <li><strong>Name:</strong> Enter your name in the provided text field.</li>
+    <li><strong>Dorm Room:</strong> Provide your dorm room information in the respective text field.</li>
+    <li><strong>Start Time and End Time:</strong> Select the start and end times for your reservation using the date and time picker.</li>
+    <li><strong>Reserve:</strong> Click the "Reserve" button to confirm your reservation.</li>
+  
+
+  <p>
+    Please ensure that the end time is greater than the start time. If the selected time is available, your reservation details will be displayed with a countdown clock. You can also cancel your reservation using the "Cancel Reservation" button.
+  </p>
+
+
+
+</div>
+
+  <form id="laundryForm">
+    <label for="machineType">Select Machine:</label>
+    <select id="machineType" name="machineType" required>
+      <option value="washingMachine1">Washing Machine 1</option>
+      <option value="washingMachine2">Washing Machine 2</option>
+      <option value="clothesDryer">Clothes Dryer</option>
+      
+    </select>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="dormRoom">Dorm Room:</label>
+    <input type="text" id="dormRoom" name="dormRoom" required>
+
+    <label for="startTime">Start Time:</label>
+    <input type="datetime-local" id="startTime" name="startTime" required>
+
+    <label for="endTime">End Time:</label>
+    <input type="datetime-local" id="endTime" name="endTime" required>
+
+
+    <label for="note">Note:</label>
+    <textarea id="note" name="note" rows="4" cols="50"></textarea>
+
+    <br>
+
+    <button class="form-btn" type="button"">Reserve</button>
+   
+  </form>
+
+  <div id="status-section">
+    <div class="machine-status" id="washingMachine1Status">
+      Washing Machine 1:  <span id="washingMachine1StatusText"> Available</span>
+      
+    </div>
+  
+    <div class="machine-status" id="washingMachine2Status">
+      Washing Machine 2: <span id="washingMachine2StatusText">Available</span>
+    </div>
+  
+    <div class="machine-status" id="clothesDryerStatus">
+      Clothes Dryer: <span id="clothesDryerStatusText">Available</span>
+      
+    </div>
+  </div>
+  
+  </div>
+
+
+<div>
+      
+        <div id="washingMachine1Reservations"></div>
+
+        <div id="washingMachine1UsageHistory"></div>
+    </div>
+
+    <div>
+   
+        <div id="washingMachine2Reservations"></div>
+        <div id="washingMachine2UsageHistory"></div>
+    </div>
+
+    <div>
+    
+        <div id="clothesDryerReservations"></div>
+        <div id="clothesDryerUsageHistory"></div>
+    </div>
+
+
+
+  <footer class="footer">
+    <p>Made by Zika 💖</p>
+
+   
+  </footer>
+
+</body>
+
+
+</html>
