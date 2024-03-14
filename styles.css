@@ -203,3 +203,21 @@ img {
     padding: 15 px; /* Adjust padding for spacing */
   }
 }
+
+  /* Add more styles as needed for smaller screens */
+}
+
+/* Disable auto-zooming on form fields */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Optionally, you can add this rule for more flexibility */
+input,
+textarea {
+  touch-action: manipulation; /* Prevent double tap zoom on iOS */
+}
